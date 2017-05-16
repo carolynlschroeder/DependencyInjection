@@ -13,10 +13,6 @@ namespace DependencyInjectionMVC.Controllers
     {
         private IPeopleRepository _repository;
 
-        //public HomeController()
-        //{
-            
-        //}
 
         public HomeController(IPeopleRepository repository)
         {
@@ -24,26 +20,8 @@ namespace DependencyInjectionMVC.Controllers
         }
 
 
-
-        //public ActionResult Index()
-        //{
-        //    var repository = new PeopleRepository();
-        //    var model = repository.GetPeople()
-        //        .Select(
-        //            p => new PersonModel
-        //            {
-        //                FirstName = p.FirstName,
-        //                LastName = p.LastName,
-        //                StartDate = p.StartDate.ToShortDateString(),
-        //                Rating = p.Rating
-        //            });
-        //    return View(model);
-        //}
-
-
         public ActionResult Index()
         {
-            //var repository = new PeopleRepository();
             var model = _repository.GetPeople()
                 .Select(
                     p => new PersonModel
